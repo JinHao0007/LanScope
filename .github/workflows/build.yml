@@ -1,0 +1,57 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build Release APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+
+      - name: Rename APK
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          cp app/build/outputs/apk/release/app-release-unsigned.apk "LanScope-${VERSION}.apk"
+
+      - name: Create Release and Upload APK
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "LanScope ${{ github.ref_name }}"
+          body: |
+            ## LanScope ${{ github.ref_name }}
+
+            Android 热点网段扫描器 —— 扫出谁连着你的手机热点。
+
+            ### 安装
+            下载下方 `LanScope-${{ github.ref_name }}.apk`，传到手机安装即可（需允许安装未知来源应用）。
+
+            ### 功能
+            - 热点网段并行扫描（UDP/ARP/TCP 三层探测，/24 网段约 10 秒）
+            - 设备厂商识别（300+ OUI 离线库）
+            - NetBIOS / DNS 主机名解析
+            - 热点信息展示（SSID / 本机 IP / 网关 / 子网掩码）
+            - 无 root 可用
+          files: |
+            LanScope-*.apk
+          generate_release_notes: true

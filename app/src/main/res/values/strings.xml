@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">网段扫描</string>
+    <string name="scan_network">扫描网段</string>
+    <string name="stop_scan">停止</string>
+    <string name="hotspot_info">热点信息</string>
+    <string name="device_list">在线设备</string>
+    <string name="no_devices">暂无设备 · 点击\"扫描网段\"开始</string>
+    <string name="scanning">正在扫描…</string>
+    <string name="scan_complete">扫描完成 · %1$d 台设备在线</string>
+    <string name="permission_needed">需要位置权限才能读取热点信息</string>
+    <string name="not_enabled">热点未开启</string>
+    <string name="enabled">热点已开启</string>
+    <string name="gateway_label">网关</string>
+    <string name="mask_label">子网掩码</string>
+    <string name="ip_label">本机 IP</string>
+    <string name="ssid_label">热点名称</string>
+    <string name="scan_port_label">扫描端口</string>
+    <string name="timeout_label">超时 (ms)</string>
+</resources>

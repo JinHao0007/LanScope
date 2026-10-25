@@ -1,0 +1,4 @@
+<resources>
+    <integer name="scan_port">33447</integer>
+    <integer name="probe_timeout">400</integer>
+</resources>

@@ -1,0 +1,40 @@
+<resources>
+    <style name="Theme.LanScanner" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+    </style>
+
+    <style name="Widget.LanScanner.Card" parent="">
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/outline</item>
+    </style>
+
+    <style name="TextAppearance.LanScanner.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/on_background</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.LanScanner.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <style name="TextAppearance.LanScanner.Value" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/on_background</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+</resources>
